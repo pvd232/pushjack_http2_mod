@@ -1052,6 +1052,8 @@ class APNSHTTP2Client(object):
         except Exception as e:
             raise APNSError(description=str(e))
         if response.status != HttpStatus.OK:
+            print("apns error response", response)
+
             raise APNSError(
                 'Invalid status code - {0}'.format(response.status))
 
